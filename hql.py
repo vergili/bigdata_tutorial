@@ -55,16 +55,13 @@ HQL_CLEAN_DATA = """
        column1, column2, column3, column4, column5, column6,column7, column8, column9, column10,
        column11, column12, column13, column14, column15, column16, column17, column18, column19,
        column20, column21, column22, column23,column24, column25, column26,column27, column28,
-       column29, column30, {source_id} 
+       column29, column30, '{source_id}' 
     )
     USING 'python /opt/deploy/udfs/my_udf_function.py'
 
     AS (
         column1, column2, column3, column4, column5, column6,column7, column8, column9, column10, source_id
     )
-    FROM {mydata};
-    CREATE INDEX FileName_Index ON TABLE {clean_mydata} (FileName) AS 'COMPACT' WITH DEFERRED REBUILD;
-    ALTER INDEX FileName_Index ON {clean_mydata} REBUILD
-
+    FROM {mydata}
 """
 

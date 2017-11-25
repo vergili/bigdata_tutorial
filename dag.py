@@ -83,7 +83,7 @@ create_source_id.set_upstream(source_data_sensor)
 
 clean_data = HiveOperator(
     task_id='clean_data',
-    hql=hql.HQL_CLEAN_DATA.format(source_id="{{ task_instance.xcom_pull(task_ids='create_batch_session') }}",
+    hql=hql.HQL_CLEAN_DATA.format(source_id="{{ task_instance.xcom_pull(task_ids='create_source_id') }}",
                                   clean_mydata='clean_mydata', mydata='mydata'),
     schema='my_hive_db',
     provide_context=True,

@@ -59,7 +59,7 @@ def move_data_mssql(templates_dict, **kwargs):
             )
         STORED AS TEXTFILE
         AS
-        SELECT column1, column2, column3, column4, column5, column6,column7, column8, column9, column10
+        SELECT column1, column2, column3, column4, column5, column6,column7, column8, column9, column10, source_id
         FROM {table}
 
     """.format(tmp_table=tmp_table, table=table,
