@@ -38,6 +38,8 @@ for line in sys.stdin:
     column30 = line[29].strip()
     source_id = line[30].strip()
 
+    # create your new columns, c
+
     new_column1 = column1
     new_column2 = column2
     new_column3 = column3

@@ -1,4 +1,3 @@
-import os
 import logging
 from airflow.hooks.hive_hooks import BaseHook, HiveServer2Hook, HiveCliHook
 from subprocess import Popen
