@@ -3,10 +3,9 @@ import string
 import random
 
 COLUMNS = ['column1', 'column2', 'column3', 'column4', 'column5', 'column6', 'column7', 'column8', 'column9',
-           'column10',
-           'column11', 'column12', 'column13', 'column14', 'column15', 'column16', 'column17', 'column18', 'column19',
-           'column20', 'column21', 'column22', 'column23', 'column24', 'column25', 'column26', 'column27', 'column28',
-           'column29', 'column30']
+           'column10', 'column11', 'column12', 'column13', 'column14', 'column15', 'column16', 'column17',
+           'column18', 'column19', 'column20', 'column21', 'column22', 'column23', 'column24', 'column25',
+           'column26', 'column27',  'column28', 'column29', 'column30']
 
 with open('mydata.csv', 'wb') as f:
     writer = csv.writer(f)
