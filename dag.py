@@ -5,9 +5,9 @@ from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.python_operator import PythonOperator, BranchPythonOperator
 from airflow.operators.hive_operator import HiveOperator
 from airflow.operators.email_operator import EmailOperator
-from airflow.operators.sensors import HdfsSensor
-from altx_data_pipeline.ingestion.test2 import tasks
-from altx_data_pipeline.ingestion.test2 import hql
+from airflow.operators.sensors import WebHdfsSensor
+from adflow.ingestion.tutorial import tasks
+from adflow.ingestion.tutorial import hql
 
 
 logger = logging.getLogger(__name__)
@@ -28,9 +28,9 @@ dag = DAG(dag_id=DAG_ID,
           default_args=default_args,
           schedule_interval=timedelta(days=1))
 
-source_data_sensor = HdfsSensor(
+source_data_sensor = WebHdfsSensor(
     task_id='source_data_sensor',
-    filepath='/data/mydata/{{ ds }}/file.csv',
+    filepath='/data/mydata/{{ ds }}/mydata.csv',
     poke_interval=10,
     timeout=5,
     dag=dag

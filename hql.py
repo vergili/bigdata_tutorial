@@ -1,5 +1,6 @@
 HQL_HDFS_TO_HIVE_TRANSFER = """
     DROP TABLE IF EXISTS {table_name};
+    DROP TABLE IF EXISTS mydata_tmp;
 
     CREATE EXTERNAL TABLE {tmp_table_name} (
         column1 STRING,
@@ -57,6 +58,8 @@ HQL_CLEAN_DATA = """
        column20, column21, column22, column23,column24, column25, column26,column27, column28,
        column29, column30, '{source_id}' 
     )
+    -- this file must exist on hadoop machines, 
+    -- in your local machine put your udf function under hadoop/udfs directory. Docker will move it to its directory. 
     USING 'python /opt/deploy/udfs/my_udf_function.py'
 
     AS (

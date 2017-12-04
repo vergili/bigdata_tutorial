@@ -1,6 +1,10 @@
 import sys
 sys.path.append('/opt/deploy/udfs')
 
+"""
+this script have to stay on hadoop machine
+file path: /opt/deploy/udfs/my_udf_function.py  
+"""
 
 # Read the hive columns
 for line in sys.stdin:
@@ -38,7 +42,7 @@ for line in sys.stdin:
     column30 = line[29].strip()
     source_id = line[30].strip()
 
-    # create your new columns, c
+    # create your new columns,
 
     new_column1 = column1
     new_column2 = column2
